@@ -1,0 +1,5 @@
+2026-11-14 09:00:00 INFO Application started successfully
+2026-11-14 09:01:00 INFO User logged in
+2026-11-14 09:02:00 WARNING High response time detected
+2026-11-14 09:03:00 ERROR Database connection failed
+2026-11-14 09:04:00 INFO Database connection restored

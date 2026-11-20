@@ -1,0 +1,30 @@
+---
+- name: Configure Web Application
+  hosts: webservers
+  become: false
+
+  tasks:
+    - name: Create application directory
+      file:
+        path: /tmp/lab3-app
+        state: directory
+        mode: '0755'
+
+    - name: Create application configuration
+      copy:
+        dest: /tmp/lab3-app/config.txt
+        content: |
+          Application: DevOps Lab 3
+          Environment: Development
+          Server: Ubuntu WSL
+
+    - name: Create application HTML page
+      copy:
+        dest: /tmp/lab3-app/index.html
+        content: |
+          <h1>Welcome to Ansible Automation</h1>
+          <p>Infrastructure configured successfully!</p>
+
+    - name: Display completion message
+      debug:
+        msg: "Application configuration completed successfully"
